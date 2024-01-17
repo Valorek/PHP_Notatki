@@ -85,3 +85,21 @@ echo $wyswietl_date;
 
 
 ?>
+
+
+<?php
+echo("<br>"); 
+$wpisany_tekst="Uczę się w super szkole i mam same dobre oceny";
+
+$czy=strpos($wpisany_tekst,'dobre');
+if($czy==TRUE)
+{
+    echo "Mozna wyswietlic ".$wpisany_tekst;
+}else{
+    echo "Tekst zawiera kłamstwo";
+}
+
+
+
+
+?>
