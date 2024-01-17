@@ -46,3 +46,35 @@ if(isset($_POST['dodaj']))
 }
 
 ?>
+
+
+
+<?php
+
+//przyklad zastosowania funkcji file() która zamienia poszczególną linijke pliku tekstowego na tablice o ilosci indeksow rownej ilosci linijek
+
+$test=file("users.txt");
+
+echo "testowanie: ".$test[5];
+
+// foreach($test as $wartosc){
+//     echo $wartosc."<br>";
+// }
+
+// ======================================================
+
+
+//przyklad zastosowania funkcji explode() rozkłada podane dane na tablice
+echo("<br>");
+$zm="ANKA MA KOTA I KOSA";
+$tab=explode('K',$zm);
+
+echo $tab[3]."<br>";
+foreach($tab as $wynik){
+    echo($wynik."<br>");
+}
+
+//==========================================================
+
+
+?>
