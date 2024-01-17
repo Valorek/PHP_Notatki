@@ -76,5 +76,12 @@ foreach($tab as $wynik){
 
 //==========================================================
 
+//przyklad zastosowania funkcji implode() która łączy podane elementy w jedność
+$data[0]='28';
+$data[1]='07';
+$data[2]='1986';
+$wyswietl_date=implode('-',$data);
+echo $wyswietl_date;
+
 
 ?>
