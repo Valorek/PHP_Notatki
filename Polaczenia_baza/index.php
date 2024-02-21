@@ -27,9 +27,13 @@ print_r($wynik);
 // }
 
 
+
+
+
 ?>
 
 <?php
+//wywolywanie wszystkich rekordow jako tablice
 $link =@mysqli_connect("localhost","root","","Car_rental");
 
 $query="select * from Klienci";
@@ -38,5 +42,21 @@ while ($wynik=mysqli_fetch_assoc($result))
 {
 print_r($wynik);
 echo "<br>";
+}
+?>
+
+
+<?php
+//wywolywanie poszczegolnych danych z rekordu za pomoca assoc 
+$link =@mysqli_connect("localhost","root","","Car_rental");
+
+$query="select * from Klienci";
+$result =mysqli_query($link,$query);
+$wynik=mysqli_num_rows($result);
+
+while ($wynik=mysqli_fetch_assoc($result))
+{
+    echo ($wynik['imie'].' '.$wynik['nazwisko']);
+    echo '<br>';
 }
 ?>
