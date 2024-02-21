@@ -44,4 +44,17 @@ while($wynik=$result->fetch_row());
 }
 ?>
 
+<?php
+$link=new mysqli("localhost","root","","Car_rental");
+$query="select * from klienci";
+$result = $link->query($query);
+
+while($wynik=$result->fetch_array());
+{
+  echo $wynik[0]." ".$wynik['nazwisko'];
+  echo '<br>';
+  
+}
+?>
+
 
