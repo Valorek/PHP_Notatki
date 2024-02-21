@@ -17,3 +17,16 @@ while($wynik=$result->fetch_assoc());
   echo '<br>';
 }
 ?>
+
+<?php
+$link=new mysqli("localhost","root","","Car_rental");
+$query="select * from klienci";
+$result = $link->query($query);
+
+while($wynik=$result->fetch_assoc());
+{
+  echo $wynik['imie']." ".$wynik['nazwisko'];
+  echo '<br>';
+  
+}
+?>
