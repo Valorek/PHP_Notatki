@@ -75,3 +75,19 @@ while ($wynik=mysqli_fetch_row($result))
     echo '<br>';
 }
 ?>
+
+
+<?php
+//wywolywanie poszczegolnych danych z rekordu za pomoca array
+$link =@mysqli_connect("localhost","root","","Car_rental");
+
+$query="select * from Klienci";
+$result =mysqli_query($link,$query);
+$wynik=mysqli_num_rows($result);
+
+while ($wynik=mysqli_fetch_array($result))
+{
+    echo ($wynik[1].' '.$wynik['nazwisko']);
+    echo '<br>';
+}
+?>
