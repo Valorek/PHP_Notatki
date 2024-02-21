@@ -28,3 +28,15 @@ print_r($wynik);
 
 
 ?>
+
+<?php
+$link =@mysqli_connect("localhost","root","","Car_rental");
+
+$query="select * from Klienci";
+$result =mysqli_query($link,$query);
+while ($wynik=mysqli_fetch_assoc($result))
+{
+print_r($wynik);
+echo "<br>";
+}
+?>
