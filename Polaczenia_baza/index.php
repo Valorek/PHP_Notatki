@@ -12,6 +12,8 @@ $result =mysqli_query($link,$query);
 echo $wynik = mysqli_num_rows($result);
 echo '<br>';
 $wynik=mysqli_fetch_assoc($result);
+$wynik=mysqli_fetch_row($result);
+$wynik=mysqli_fetch_array($result);
 print_r($wynik);
 
 // $link1=new mysqli('localhost','root','','Car_rental');
