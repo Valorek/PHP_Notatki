@@ -10,6 +10,9 @@ $link =@mysqli_connect("localhost","root","","Car_rental");
 $query="select * from Klienci";
 $result =mysqli_query($link,$query);
 echo $wynik = mysqli_num_rows($result);
+echo '<br>';
+$wynik=mysqli_fetch_assoc($result);
+print_r($wynik);
 
 // $link1=new mysqli('localhost','root','','Car_rental');
 // if($link1->connect_error)
