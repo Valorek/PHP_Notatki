@@ -60,3 +60,18 @@ while ($wynik=mysqli_fetch_assoc($result))
     echo '<br>';
 }
 ?>
+
+<?php
+//wywylywanie poszczegolnych danych z rekordu za pomocą row
+$link =@mysqli_connect("localhost","root","","Car_rental");
+
+$query="select * from Klienci";
+$result =mysqli_query($link,$query);
+$wynik=mysqli_num_rows($result);
+
+while ($wynik=mysqli_fetch_row($result))
+{
+    echo ($wynik[1].' '.$wynik[2]);
+    echo '<br>';
+}
+?>
