@@ -5,3 +5,40 @@ $query="INSERT INTO `Klienci` (`klient_id`, `imie`, `nazwisko`, `nr_telefonu`, `
 $e=mysqli_query($link,$query) or die(mysqli_error($e));
 mysqli_close($link);
 ?>
+
+
+<form method='post'>
+    <label for='id'>klient_id</label>
+    <input type='text' name='klient_id' placeholder='klient_id'>
+    <label for='name'>imie</label>
+    <input type='text' name='name' placeholder='imie'>
+    <label for='nazwisko'>nazwisko</label>
+    <input type='text' name='nazwisko' placeholder='nazwisko'>
+    <label for='telefon'>nr_telefonu</label>
+    <input type='text' name='telefon' placeholder='nr_telefonu'>
+    <label for='email'>email</label>
+    <input type='text' name='email' placeholder='email'>
+    <input type='submit'>
+</form>
+
+
+<?php
+$link=new mysqli("localhost","root","","Car_rental");
+mysqli_set_charset($link,"utf8");
+$id=$_POST['klient_id'];
+$imie=$_POST['name'];
+$nazwisko=$_POST['nazwisko'];
+$telefon=$_POST['telefon'];
+$email=$_POST['email'];
+$query="INSERT INTO `Klienci` (`klient_id`, `imie`, `nazwisko`, `nr_telefonu`, `email`) VALUES ('$id', '$imie', '$nazwisko', '$telefon', '$email')";
+$myQuery=mysqli_query($link,$query);
+if($myQuery==false)
+{
+    echo('QUERY NON SENS');
+}
+else
+{
+    echo("Wpis duany");
+}
+mysqli_close($link);
+?>
