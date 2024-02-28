@@ -6,6 +6,7 @@ $e=mysqli_query($link,$query) or die(mysqli_error($e));
 mysqli_close($link);
 ?>
 
+==================================================================
 
 <form method='post'>
     <label for='id'>klient_id</label>
@@ -42,3 +43,24 @@ else
 }
 mysqli_close($link);
 ?>
+
+=========================================================
+
+<?php
+$link = new mysqli("localhost", "root", "", "Car_rental");
+mysqli_set_charset($link, "utf8");
+
+$query = "UPDATE `Klienci` SET `klient_id` = '20' WHERE `nazwisko` = 'Ohman'";
+$myQuery= mysqli_query($link, $query);
+if($myQuery==false)
+{
+    echo('QUERY NON SENS');
+}
+else
+{
+    echo('Wpis udany');
+}
+
+mysqli_close($link);
+?>
+
