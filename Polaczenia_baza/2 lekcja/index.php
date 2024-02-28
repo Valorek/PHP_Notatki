@@ -64,3 +64,26 @@ else
 mysqli_close($link);
 ?>
 
+
+===========================================================
+
+
+<?php
+$link = new mysqli("localhost", "root", "", "Car_rental");
+mysqli_set_charset($link, "utf8");
+
+$query = "DELETE FROM `Klienci` WHERE `klient_id` = '6'";
+$myQuery= mysqli_query($link, $query);
+if($myQuery==false)
+{
+    echo('QUERY NON SENS');
+}
+else
+{
+    echo('Wpis wyjebany');
+}
+
+mysqli_close($link);
+?>
+
+
