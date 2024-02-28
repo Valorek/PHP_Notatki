@@ -86,4 +86,17 @@ else
 mysqli_close($link);
 ?>
 
+=========================================================
+
+<?php
+echo '<a href=wf.php?';
+echo 'r=';
+echo $row[0];
+echo '&=';
+echo 's=';
+echo $row[1];
+echo '>';
+echo 'Edytuj';
+echo '</a>';
+?>
 
